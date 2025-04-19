@@ -8,9 +8,7 @@ public class Util {
     public static String getNowDate() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
         LocalDateTime now = LocalDateTime.now();
-        String regDate = now.format(formatter);
-
-        return regDate;
+        return now.format(formatter);
 
     }
 }

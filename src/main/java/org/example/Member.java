@@ -2,13 +2,13 @@ package org.example;
 
 public class Member {
     private int id;
-    private String loginiD;
+    private String loginId;
     private String loginPw;
     private String name;
 
-    public Member(int id, String loginiD, String loginPw, String name) {
+    public Member(int id, String loginId, String loginPw, String name) {
         this.id = id;
-        this.loginiD = loginiD;
+        this.loginId = loginId;
         this.loginPw = loginPw;
         this.name = name;
     }
@@ -18,7 +18,7 @@ public class Member {
     }
 
     public String getLoginId() {
-        return loginiD;
+        return loginId;
     }
 
     public String getLoginPw() {
@@ -29,4 +29,13 @@ public class Member {
         return name;
     }
 
+    @Override
+    public String toString() {
+        return "Member{" +
+                "id=" + id +
+                ", loginId='" + loginId + '\'' +
+                ", loginPw='" + loginPw + '\'' +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

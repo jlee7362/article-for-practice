@@ -47,4 +47,14 @@ public class Article {
         this.body = body;
     }
 
+    @Override
+    public String toString() {
+        return "Article{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", body='" + body + '\'' +
+                ", regDate='" + regDate + '\'' +
+                ", authorId=" + authorId +
+                '}';
+    }
 }
