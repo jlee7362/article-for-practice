@@ -17,7 +17,7 @@ public class Member {
         return id;
     }
 
-    public String getLoginiD() {
+    public String getLoginId() {
         return loginiD;
     }
 
@@ -28,4 +28,5 @@ public class Member {
     public String getName() {
         return name;
     }
+
 }

@@ -25,7 +25,7 @@ public class Main {
                 //중복 체크
                 boolean isJoinable = true;
                 for (Member member : memberList){
-                    if(member.getLoginiD().equals(loginId)){
+                    if(member.getLoginId().equals(loginId)){
                         isJoinable = false;
                         break;
                     }
@@ -55,7 +55,7 @@ public class Main {
 
                 Member foundMember = null;
                 for(Member member : memberList){
-                    if(member.getLoginiD().equals(loginId) && member.getLoginPw().equals(loginPw)){
+                    if(member.getLoginId().equals(loginId) && member.getLoginPw().equals(loginPw)){
                         foundMember = member;
                         break;
                     }
@@ -99,6 +99,7 @@ public class Main {
                 addArticle.setBody(body);
                 addArticle.setTitle(title);
                 addArticle.setRegDate(regDate);
+                addArticle.setAuthorId(loginedMember.getId());
 
                 articleList.add(addArticle);
 
@@ -138,6 +139,10 @@ public class Main {
                     if (found == null) {
                         System.out.println("해당 게시물이 존재하지 않습니다.");
                     } else {
+                        if (found.getAuthorId() != loginedMember.getId()) {
+                            System.out.println("권한이 없습니다.");
+                            continue;
+                        }
                         System.out.println("기존제목: " + found.getTitle());
                         System.out.println("기존내용: " + found.getBody());
                         System.out.print("새로 쓸 제목: ");
@@ -197,6 +202,10 @@ public class Main {
                     if (found == null) {
                         System.out.println("게시글이 없습니다.");
                     } else {
+                        if(found.getAuthorId() != loginedMember.getId()){
+                            System.out.println("해당 글을 삭제할 권한이 없습니다.");
+                            continue;
+                        }
                         System.out.println("정말 삭제하시겠습니까?(y/n)");
                         String confirm = sc.nextLine();
                         if (confirm.equals("y")) {

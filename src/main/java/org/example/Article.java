@@ -5,6 +5,14 @@ public class Article {
     private String title;
     private String body;
     private String regDate;
+    private int authorId;
+
+    public int getAuthorId() {
+        return authorId;
+    }
+    public void setAuthorId(int authorId) {
+        this.authorId = authorId;
+    }
 
     public String getRegDate() {
         return regDate;
@@ -13,6 +21,7 @@ public class Article {
     public void setRegDate(String regDate) {
         this.regDate = regDate;
     }
+
 
     public int getId() {
         return id;
